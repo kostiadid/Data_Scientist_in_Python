@@ -1,25 +1,26 @@
-# CODE FROM THE PREVIOUS SCREEN
 opened_file = open('AppleStore.csv')
 from csv import reader
 read_file = reader(opened_file)
 apps_data = list(read_file)
 
-def extract(index):
-    column = []    
-    for row in apps_data[1:]:
-        value = row[index]
-        column.append(value)    
-    return column
 
-genres = extract(11)
-
-
-def freq_table(some_list):
-    dictionary = {}
-    for i in some_list:
-        if i in  dictionary:
-            dictionary[i]+=1
+def freq_table(column_num,data):
+    column_list = []
+    freq_dict = {}
+    for i in data[1:]:
+        column_list.append(i[column_num])
+    for i in  column_list:
+        if i in  freq_dict:
+            freq_dict[i]+=1
         else:
-            dictionary[i]=1
-    return dictionary
-genres_ft=freq_table(genres)
+            freq_dict[i]=1
+    return  freq_dict
+    
+    
+ratings_ft=freq_table(7,apps_data)    
+    
+        
+        
+        
+        
+    
