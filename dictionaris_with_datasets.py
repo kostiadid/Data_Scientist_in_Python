@@ -1,12 +1,13 @@
-content_ratings = {'4+': 4433, '12+': 1155, '9+': 987, '17+': 622}
-total_number_of_apps = 7197
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
 
 
-for i in content_ratings:
-    content_ratings[i] = (content_ratings[i] / total_number_of_apps) * 100
+data_sizes = []
+for i in  apps_data[1:]:
+    size = float(i[2])
+    data_sizes.append(size)
     
-percentage_17_plus= content_ratings['17+']
-
-percentage_15_allowed = ((total_number_of_apps / total_number_of_apps)* 100) - percentage_17_plus
-
-
+min_size = min(data_sizes)
+max_size = max(data_sizes)
