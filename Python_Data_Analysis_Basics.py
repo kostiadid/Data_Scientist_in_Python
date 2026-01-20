@@ -14,3 +14,15 @@ for i in ages:
     if i <=20:
         final_age = "Unknown"
     final_ages.append(final_age)
+
+
+
+decades = []
+for i in final_ages:
+    if i is "Unknown":
+        decade = i
+    else:  
+        decade=str(i)
+        decade = decade[:-1]
+        decade +="0s"
+    decades.append(decade)
