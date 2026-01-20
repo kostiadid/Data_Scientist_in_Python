@@ -26,3 +26,11 @@ for i in final_ages:
         decade = decade[:-1]
         decade +="0s"
     decades.append(decade)
+
+decade_frequency = {}
+
+for i in decades:
+    if i  not in decade_frequency:
+        decade_frequency[i] = 1
+    else:
+        decade_frequency[i] += 1
