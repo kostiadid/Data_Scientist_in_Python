@@ -34,3 +34,18 @@ for i in decades:
         decade_frequency[i] = 1
     else:
         decade_frequency[i] += 1
+
+
+
+g_freq_table = {}
+
+for i in moma:
+    g = i[5]
+    if not g in g_freq_table:
+        g_freq_table[g] = 1
+    else:
+        g_freq_table[g] += 1
+        
+for  key,val in  g_freq_table.items():
+    output = f"There are {val:,} artworks by {key} artists"
+    print(output)
