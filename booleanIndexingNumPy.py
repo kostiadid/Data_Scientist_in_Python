@@ -1,3 +1,7 @@
+taxi = np.genfromtxt('nyc_taxis.csv', delimiter=',')
+
+
+
 pickup_month = taxi[:, 1]
 
 january_bool = pickup_month == 1
