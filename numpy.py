@@ -60,4 +60,43 @@ rows_391_to_500 = taxi[391:501]
 
 row_21_column_5 = taxi[21,5]
 
+columns_1_4_7 = taxi[:, [1,4,7]]
+row_99_columns_5_to_8  = taxi[99, 5:9]
+rows_100_to_200_column_14  = taxi[100:201, 14]
+
+
+#Vector Operations
+fare_amount = taxi[:,9]
+fees_amount = taxi[:,10]
+
+fare_and_fees = fare_amount+fees_amount
+print(fare_and_fees)
+
+
+trip_distance_miles = taxi[:, 7]
+trip_length_seconds = taxi[:, 8]
+
+trip_length_hours = trip_length_seconds / 3600 
+
+trip_mph = trip_distance_miles/trip_length_hours 
+
+
+mph_min = trip_mph.min()
+print(mph_min)
+
+mph_max = trip_mph.max()
+print(mph_max)
+
+mph_mean = trip_mph.mean()
+
+# extract the first 5 rows only
+taxi_first_five = taxi[:5]
+# select columns: fare_amount, fees_amount, tolls_amount, and tip_amount
+fare_components = taxi_first_five[:, 9:13]
+
+fare_sums = fare_components.sum(axis=1)
+print(fare_sums)
+
+fare_totals = taxi_first_five[:,13]
+print(fare_totals)
 
