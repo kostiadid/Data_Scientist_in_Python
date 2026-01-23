@@ -20,3 +20,9 @@ for row in taxi_list:
 # start writing your code below this comment
 
 taxi = np.array(converted_taxi_list)
+
+
+# As I understand it, Python helps us speed up work with data structures by executing several identical processes simultaneously, 
+#which is called vectorization. As I understand it, if we simply iterated over a list of lists in pure Python, 
+#it would require twice as many CPU cycles, but if we iterate over an array using Python, it will take half as many ticks.
+
