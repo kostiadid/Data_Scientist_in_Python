@@ -42,3 +42,46 @@ taxi_copy[550:552,7] = np.mean(taxi_copy[:,7])
 print(taxi_copy[550:552,7]) 
 
 rows_550_551 = taxi_copy[550:552,:]
+
+
+
+
+#Assignment Using Boolean Arrays
+# this creates a copy of our taxi ndarray
+taxi_copy = taxi.copy()
+
+trip_length = taxi_copy[:,8]
+trip_bool_length = trip_length < 60
+print(trip_bool_length)
+
+print(trip_length)
+trip_length[trip_bool_length] = 0 
+print(trip_length)
+
+
+
+# Assignment Using Boolean Arrays (Continued)
+# create a new array filled with `0`
+zeros = np.zeros([taxi.shape[0], 1])
+# append the array to the taxi data to create a new column
+taxi_modified = np.concatenate([taxi, zeros], axis=1)
+# inspect the last five columns of the first ten rows
+# print(taxi_modified[:10, -5:])
+
+
+bool_taxi = taxi_modified[:,6] == 2
+
+
+taxi_modified[bool_taxi ,15] = 1
+
+taxi_modified[taxi_modified[:, 6] == 3, 15] = 1
+taxi_modified[taxi_modified[:, 6] == 5, 15] = 1
+
+
+
+
+
+
+
+
+
