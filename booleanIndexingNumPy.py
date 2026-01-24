@@ -80,6 +80,34 @@ taxi_modified[taxi_modified[:, 6] == 5, 15] = 1
 
 
 
+#Challenge: Which Is the Busiest Airport?
+
+JFK_Airport_bool = taxi[:,5] ==2
+LaGuardia_Airport_bool = taxi[:,5] == 3
+Newark_Airport_bool = taxi[:,5] == 5
+
+jfk = taxi[JFK_Airport_bool]
+laguardia = taxi[LaGuardia_Airport_bool]
+newark_count = taxi[Newark_Airport_bool]
+
+jfk_count = len(jfk)
+laguardia_count = len(laguardia)
+newark_count = len(newark_count)
+
+
+final_list = [jfk_count,laguardia_count,newark_count]
+busiest_airport = 0
+for i in final_list:
+    if i > busiest_airport:
+        busiest_airport = i
+        
+print(busiest_airport)
+    
+busiest_airport = 'laguardia'
+
+
+
+
 
 
 
