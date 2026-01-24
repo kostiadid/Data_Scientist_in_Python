@@ -1,7 +1,5 @@
 taxi = np.genfromtxt('nyc_taxis.csv', delimiter=',')
-
-
-
+#This demonstrates how to filter a date using Boolean conditions.
 pickup_month = taxi[:, 1]
 
 january_bool = pickup_month == 1
