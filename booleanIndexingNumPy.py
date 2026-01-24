@@ -14,3 +14,12 @@ february = pickup_month[february_bool]
 
 
 february_rides = february.shape[0]
+
+
+tip_amount = taxi[:,12]
+
+print(tip_amount)
+
+tip_bool = tip_amount > 20
+print(tip_bool)
+top_tips = taxi[tip_bool,5:14]
