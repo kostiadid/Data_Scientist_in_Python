@@ -41,27 +41,26 @@ profited = f500.loc[profited_bool]
 costs = profited['revenues'] - profited['profits']
 f500['costs'] = costs
 
-
-
-
-
-
-
 #Using Boolean Operators
 large_revenue = f500["revenues"] > 100000
 negative_profits = f500["profits"] < 0
 combined = large_revenue & negative_profits
 big_rev_neg_profit = f500.loc[combined]
 
-
 filter_brazil_venezuela = (f500["country"] == "Brazil") | (f500["country"] == "Venezuela")
-
 brazil_venezuela = f500[filter_brazil_venezuela]
 
 # for me !=  easer  
 filter_tech_outside_usa = (f500["sector"] == "Technology") & ~(f500["country"] == "USA")
 tech_outside_usa = f500[filter_tech_outside_usa].head()
 
+#Sorting Values
+selected_rows = f500[f500["country"] == "Japan"]
+sorted_rows = selected_rows.sort_values('profits',ascending = False)
+
+i = sorted_rows.loc[:,['company','profits']]
+
+top_japanese_company = i.iloc[0] 
 
 
 
