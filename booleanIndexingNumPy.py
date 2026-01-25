@@ -105,6 +105,18 @@ print(busiest_airport)
     
 busiest_airport = 'laguardia'
 
+#Challenge: Calculating Statistics for Trips on Clean Data
+trip_distance = taxi[:, 7] # trip distance in miles
+trip_length = taxi[:, 8] / 3600 # trip length in hours
+trip_mph = trip_distance / trip_length # average trip speed in mph
+
+
+bool_taxi = trip_mph < 100
+cleaned_taxi = taxi[bool_taxi]
+
+mean_distance = cleaned_taxi[:,7].mean()
+
+mean_length = cleaned_taxi[:,8].mean()
 
 
 
