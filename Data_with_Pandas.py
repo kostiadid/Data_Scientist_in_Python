@@ -63,5 +63,33 @@ i = sorted_rows.loc[:,['company','profits']]
 top_japanese_company = i.iloc[0] 
 
 
+#Using Loops with pandas
+top_employer_by_country = {}
+
+countries = f500['country'].unique()
+
+print(countries)
+
+for  c in countries:
+    country_bool = f500['country'] == c
+    selected_rows = f500.loc[country_bool]
+    sorted_rows = selected_rows.sort_values('employees',ascending=False)
+    first = sorted_rows.iloc[0]
+    employer_name = first["company"]
+    top_employer_by_country[c] =  employer_name
+
+
+
+#· Challenge: Calculating Return on Assets by Sector
+f500["roa"] = f500["profits"] / f500["assets"]
+
+
+top_roa_by_sector = {}
+for sector in f500["sector"].unique():
+    is_sector = f500["sector"] == sector
+    sector_companies = f500.loc[is_sector]
+    top_company = sector_companies.sort_values("roa", ascending=False).iloc[0]
+    company_name = top_company["company"]
+    top_roa_by_sector[sector] = company_name
 
 
