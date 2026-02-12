@@ -26,3 +26,6 @@ laptops['os']= laptops['os'].map(mapping_dict)
 
 osCounts = laptops["os"].value_counts()
 
+#Dropping Missing Values
+laptops_no_null_rows = laptops.dropna()
+laptops_no_null_cols = laptops.dropna(axis=1)
