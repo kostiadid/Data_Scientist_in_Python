@@ -11,3 +11,14 @@ for i in laptops.columns:
 laptops.columns = new_columns  
 
 
+
+
+
+
+gpu_split = laptops["gpu"].str.split()
+laptops["gpu_manufacturer"] = gpu_split.str[0]
+gpu_manufacturer_counts = laptops["gpu_manufacturer"].value_counts()
+
+
+laptops["cpu_manufacturer"] =laptops["cpu"].str.split().str[0]
+cpu_manufacturer_counts =  laptops["cpu_manufacturer"].value_counts()
