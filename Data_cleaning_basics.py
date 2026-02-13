@@ -44,3 +44,22 @@ laptops.loc[laptops["os"] == "No OS","os_version"] = "Not Applicable"
 value_counts_after = laptops.loc[laptops["os_version"].isnull(), "os"].value_counts()
 
 
+
+
+
+print(laptops["weight"])
+
+
+
+#   rename column     #   remove  some  symbols  #  convert to float      #save file 
+
+laptops['weight'] = laptops['weight'].str.strip("kgs")
+laptops['weight'] = laptops['weight'].str.strip("kg")
+laptops["weight"] = laptops["weight"].astype(float)
+laptops.rename(columns={"weight":"weight_kg"},inplace=True)
+
+
+laptops.to_csv('/tmp/laptops_cleaned.csv',index=False)
+
+
+
