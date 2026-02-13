@@ -29,3 +29,18 @@ osCounts = laptops["os"].value_counts()
 #Dropping Missing Values
 laptops_no_null_rows = laptops.dropna()
 laptops_no_null_cols = laptops.dropna(axis=1)
+
+
+
+
+
+
+value_counts_before = laptops.loc[laptops["os_version"].isnull(), "os"].value_counts()
+laptops.loc[laptops["os"] == "macOS", "os_version"] = "X"
+
+laptops.loc[laptops["os"] == "No OS","os_version"] = "Not Applicable"
+
+
+value_counts_after = laptops.loc[laptops["os_version"].isnull(), "os"].value_counts()
+
+
