@@ -1,3 +1,13 @@
+# Plot and customize a line graph using Matplotlib
+# Visualize time series with line graphs
+# Interpret line plots by identifying types of change
+
+
+
+
+
+
+
 import pandas as pd
 import matplotlib.pyplot as plt
 
