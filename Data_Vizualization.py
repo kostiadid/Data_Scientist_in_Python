@@ -1,12 +1,8 @@
-import matplotlib.pyplot as plt
+import pandas as pd
 
-month_number = [1, 2, 3, 4, 5, 6, 7]
-new_deaths = [213, 2729, 37718, 184064, 143119, 136073, 165003]
+who_time_series = pd.read_csv('WHO_time_series.csv')
+who_time_series = pd.DataFrame(who_time_series)
+who_time_series['Date_reported'] =pd.to_datetime(who_time_series['Date_reported'])
+print(who_time_series.head())
 
-
-plt.plot(month_number, new_deaths)
-plt.ticklabel_format(axis='y', style='plain')
-plt.title('New Reported Deaths By Month (Globally)')
-plt.xlabel('Month Number')
-plt.ylabel('Number Of Deaths')
-plt.show()
+print(pd.DataFrame(who_time_series).info())
