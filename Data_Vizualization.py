@@ -68,6 +68,17 @@ plt.show()
 
 
 
+# Scatter
+
+# If the dots are self-explanatory and different, then scatter.
+# If the dots are a sequence or you just need to quickly throw a lot of similar markers together, then create a plot.
+
+
+plt.scatter(bike_sharing['windspeed'], bike_sharing['cnt'])
+plt.xlabel('Wind Speed')
+plt.ylabel('Bikes Rented')
+plt.show()
+
 
 
 
