@@ -79,7 +79,27 @@ plt.xlabel('Wind Speed')
 plt.ylabel('Bikes Rented')
 plt.show()
 
+#Correlation   might  be positive or negative 
+plt.scatter(bike_sharing['atemp'],bike_sharing['registered'])
+plt.show()
+
+correlation = 'positive'
 
 
+#Corr  method 
+
+
+temp_atemp_corr = bike_sharing['temp'].corr(bike_sharing['atemp'])
+wind_hum_corr = bike_sharing['windspeed'].corr(bike_sharing['hum'])
+
+plt.scatter(bike_sharing['temp'], bike_sharing['atemp'])
+plt.xlabel('Air Temperature')
+plt.ylabel('Feeling Temperature')
+plt.show()
+
+plt.scatter(bike_sharing['windspeed'], bike_sharing['hum'])
+plt.xlabel('Wind Speed')
+plt.ylabel('Humidity')
+plt.show()
 
 
