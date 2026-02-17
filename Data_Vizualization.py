@@ -60,6 +60,13 @@ plt.show()
 
 
 
+# we can  see similarity in how the temperature and the number of bikes rented change
+plt.plot(bike_sharing['dteday'],bike_sharing['temp'])
+plt.xticks(rotation=45)
+plt.show()
+
+
+
 
 
 
