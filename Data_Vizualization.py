@@ -103,3 +103,28 @@ plt.ylabel('Humidity')
 plt.show()
 
 
+
+
+
+
+#Bar Plots, Histograms, and Distributions
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+bike_sharing = pd.read_csv('day.csv')
+bike_sharing['dteday'] = pd.to_datetime(bike_sharing['dteday'])
+
+bike_sharing.corr()['workingday'][['casual', 'registered']]
+
+plt.scatter(bike_sharing['workingday'], bike_sharing['casual'])
+plt.title('Working Day Vs. Casual')
+plt.show()
+
+
+plt.scatter(bike_sharing['workingday'], bike_sharing['registered'])
+plt.title('Working Day Vs. Registered')
+plt.show()
+
+
+
