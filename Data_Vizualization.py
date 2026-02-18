@@ -135,4 +135,14 @@ plt.bar(working_days, registered_avg)
 plt.show()
 
 
+#Customizing Bar Plots
+bike_sharing = pd.read_csv('day.csv')
+bike_sharing['dteday'] = pd.to_datetime(bike_sharing['dteday'])
+weekday_averages = bike_sharing.groupby('weekday').mean()[['casual', 'registered']].reset_index() # It's not essential to understand how this code works, we'll cover this in a later course
 
+plt.bar(weekday_averages['weekday'],weekday_averages['registered'])
+
+plt.xticks(ticks=[0, 1, 2, 3, 4, 5, 6],
+          labels=['Sunday', 'Monday', 'Tuesday', 'Wednesday',
+                 'Thursday', 'Friday', 'Saturday'], rotation=30)
+plt.show()
