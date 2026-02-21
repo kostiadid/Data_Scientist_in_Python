@@ -14,3 +14,9 @@ traffic['Slowness in traffic (%)'].plot.hist()
 plt.title('Distribution of Slowness in traffic (%)')
 plt.xlabel('Slowness in traffic (%)')
 plt.show()
+
+
+incidents = traffic.drop(['Hour (Coded)', 'Slowness in traffic (%)'],
+                        axis=1)
+incidents.sum().plot.bar()
+plt.show()
