@@ -31,3 +31,11 @@ plt.show()
 traffic.plot.scatter(x='Slowness in traffic (%)',
                      y='Semaphore off')
 plt.show()
+
+
+#Traffic Slowness Over 20%
+slowness_20_or_more = traffic[traffic['Slowness in traffic (%)'] >= 20]
+slowness_20_or_more = slowness_20_or_more.drop(['Hour (Coded)', 'Slowness in traffic (%)'],axis=1)
+incident_frequencies = slowness_20_or_more.sum()
+incident_frequencies.plot(kind='barh')
+plt.show()
