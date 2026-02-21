@@ -8,3 +8,9 @@ traffic['Slowness in traffic (%)'] = traffic['Slowness in traffic (%)'].astype(f
 
 plot.hist(traffic['Slowness in traffic (%)'])
 plot.show()
+
+# we can do it this way    it's might be easer  
+traffic['Slowness in traffic (%)'].plot.hist()
+plt.title('Distribution of Slowness in traffic (%)')
+plt.xlabel('Slowness in traffic (%)')
+plt.show()
