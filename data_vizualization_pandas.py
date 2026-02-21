@@ -20,3 +20,14 @@ incidents = traffic.drop(['Hour (Coded)', 'Slowness in traffic (%)'],
                         axis=1)
 incidents.sum().plot.bar()
 plt.show()
+
+
+traffic.plot.scatter(x='Slowness in traffic (%)',
+                     y='Lack of electricity')
+plt.show()
+traffic.plot.scatter(x='Slowness in traffic (%)',
+                     y='Point of flooding')
+plt.show()
+traffic.plot.scatter(x='Slowness in traffic (%)',
+                     y='Semaphore off')
+plt.show()
