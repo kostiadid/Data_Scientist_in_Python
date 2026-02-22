@@ -39,3 +39,24 @@ slowness_20_or_more = slowness_20_or_more.drop(['Hour (Coded)', 'Slowness in tra
 incident_frequencies = slowness_20_or_more.sum()
 incident_frequencies.plot(kind='barh')
 plt.show()
+
+
+
+
+
+#How Traffic Slowness Change   
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+traffic_per_day = {}
+for i, day in zip(range(0, 135, 27), days):
+    each_day_traffic = traffic[i:i+27]
+    traffic_per_day[day] = each_day_traffic
+    
+for day in days:
+    traffic_per_day[day].plot.line(x='Hour (Coded)',
+                                    y='Slowness in traffic (%)')
+    plt.title(day)
+    plt.ylim([0,25])
+    plt.show()
+
+
+
