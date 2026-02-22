@@ -59,4 +59,12 @@ for day in days:
     plt.show()
 
 
+#all  lines in one  plot 
+for day in days:
+    plt.plot(
+        traffic_per_day[day]['Hour (Coded)'],
+        traffic_per_day[day]['Slowness in traffic (%)'],
+        label=day)
+    plt.legend()
+plt.show()
 
