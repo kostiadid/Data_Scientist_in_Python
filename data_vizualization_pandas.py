@@ -68,3 +68,37 @@ for day in days:
     plt.legend()
 plt.show()
 
+
+#Grid Charts
+plt.figure(figsize=(10, 12))
+plt.subplot(3, 2, 1)
+plt.subplot(3, 2, 2)
+plt.subplot(3, 2, 3)
+plt.subplot(3, 2, 4)
+plt.subplot(3, 2, 5)
+plt.subplot(3, 2, 6)
+
+plt.show()
+
+plt.figure(figsize=(10, 12))
+for i,day in zip(range(1,7),days):
+    plt.subplot(3, 2, i)
+    plt.plot(traffic_per_day[day]['Hour (Coded)'],
+        traffic_per_day[day]['Slowness in traffic (%)'])
+    plt.title(day)
+    plt.ylim([0,25])
+  
+plt.subplot(3, 2, 6)
+for day in days:
+    plt.plot(
+        traffic_per_day[day]['Hour (Coded)'],
+        traffic_per_day[day]['Slowness in traffic (%)'],
+        label=day)
+    plt.legend()
+    plt.ylim([0,25])
+plt.show()
+
+
+
+
+
