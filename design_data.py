@@ -12,12 +12,22 @@ for location in ['left', 'right', 'top', 'bottom']:
     ax.spines[location].set_visible(False)
     
 ax.set_xticks([0, 150000, 300000])
+ax.set_xticklabels(['0', '150,000', '300,000'])
 ax.xaxis.tick_top()
 ax.tick_params(top=False, left=False)
 ax.tick_params(axis='x', colors='grey')
+ax.text(x=-80000, y=23.5,
+        s='The Death Toll Worldwide Is 1.5M+',
+        weight='bold', size=17)
+ax.text(x=-80000, y=22.5,
+        s='Top 20 countries by death toll (December 2020)',
+        size=12)
 
-ax.text(x=-80000, y=23.5, s='The Death Toll Worldwide Is 1.5M+',
-        size=17, weight='bold')
-ax.text(x=-80000, y=22.5, s='Top 20 countries by death toll (December 2020)',
-        size=12, weight='bold')
+ax.set_yticklabels([])
+country_names = top20_deathtoll['Country_Other']
+for i, country in zip(range(20), country_names):
+    ax.text(x=-80000, y=i-0.15, s=country)
+    
+ax.axvline(x=150000, ymin=0.045, c='grey', alpha=0.5)
+
 plt.show()
